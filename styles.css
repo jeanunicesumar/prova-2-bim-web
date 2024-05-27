@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+header div {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header div .filter {
+    position: relative;
+}
+
+header div .filter:hover {
+    cursor: pointer;
+}
+
+header div .filter span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -10px;
+    bottom: -8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    background-color: rgb(255, 255, 255);
+    color: #4682b4;
+}
+
+header form {
+    width: 100%;
+    max-width: 100ch;
+    position: relative;
+}
+
+header form input {
+    padding: 0 10px;
+    width: 100%;
+    outline: 0;
+    height: 35px;
+}
+
+header form button {
+    padding: 0 10px;
+    border: 0;
+    background-color: transparent;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.3s;
+}
+
+header form button:hover {
+    cursor: pointer;
+}
+
+main {
+    background-color: #f0f0f0;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+main ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+main ul li:last-child {
+    border: 0;
+}
+
+main ul li section {
+    max-width: 100ch;
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+main ul li section div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main ul li section div:nth-child(2n) {
+    padding-left: 10px;
+}
+
+main .image-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+main ul li button {
+    background-color: #ccc;
+    width: 100%;
+}
+
+main ul li button:hover {
+    cursor: pointer;
+}
+
+main ul li section div span {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+dialog {
+    padding: 30px;
+    border: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog span {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#closeModal:hover {
+    cursor: pointer;
+}
+
+dialog form {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+dialog form input, dialog form select {
+    padding: 0 10px;
+    border: 1px solid #ccc;
+} 
+
+dialog form span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+dialog form button {
+    border: 0;
+    height: 30px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+input, select {
+    min-width: 250px;
+}
+
+input, select, button {
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    height: 35px;
+}
+
+header, footer, button {
+    background-color: #4682b4;
+    color: #ffffff;
+}
+
+.section-paginator {
+    display: flex;
+    justify-content: center;
+}
+
+.section-paginator ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.section-paginator ul li {
+    border: 0;
+}
+
+.section-paginator ul li button {
+    background-color: #ffffff;
+    border: 2px solid #4682b4;
+    color: #4682b4;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.section-paginator ul li button:hover {
+    background-color: #4682b4;
+    color: #ffffff;
+}
+
+.section-paginator ul li button.selected {
+    background-color: #4682b4;
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 896px) {
+    header div {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    main ul li section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px auto;
+    }
+
+    main ul li section div:nth-child(2n) {
+        padding: 10px;
+    }
+
+    dialog form {
+        grid-template-columns: 1fr;
+    }
+
+    dialog form button {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+}

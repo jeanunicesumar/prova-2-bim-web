@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibge</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Portal de Notícias do IBGE</h1>
+        <div>
+            <span></span>
+            <form id="form-search" onsubmit="onSearch(event)">
+                <input type="text" id="busca" name="search" placeholder="Buscar notícia por termo" />
+                <button class="search">🔍</button>
+            </form>
+            <span class="filter" id="openModal">
+                <svg width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+                </svg>
+                <span id="count-filters"></span>
+            </span>
+        </div>
+    </header>
+
+    <main>
+        <ul id="noticias"></ul>
+        <section class="section-paginator"><ul id="paginator"></ul></section>
+    </main>
+
+    <footer>
+        <p>&copy; Prova do segundo bimestre - Programação WEB</p>
+    </footer>
+
+    <dialog>
+        <span>
+            <img src="./images/close.png" alt="Close modal" id="closeModal"/>
+        </span>
+        <form id="form-filter" onsubmit="sendFilter(event)">
+            <span>
+            <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                    <option value="">Selecione um tipo</option>
+                    <option value="noticia">Noticia</option>
+                    <option value="release">Release</option>
+                </select>
+            </span>
+            <span>
+                <label for="qtd">Quantidade:</label>
+                <select name="qtd" id="qtd">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </span>
+            <span>
+                <label for="tipo">De:</label>
+                <input name="de" id="de" type="date"/>
+            </span>
+            <span>
+                <label for="tipo">Até:</label>
+                <input name="ate" id="ate" type="date"/>
+            </span>
+            <button type="submit">Aplicar</button>
+        </form>
+    </dialog>
+
+    <script src="./index.js"></script>
+</body>
+</html>
