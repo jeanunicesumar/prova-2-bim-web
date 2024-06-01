@@ -69,6 +69,8 @@ function applyFilterOrDelete(field, form, url, isDate) {
 function updateValuesForms() {
     
     const urlParams = new URLSearchParams(location.search);
+    const qtd = document.getElementById("qtd");
+    qtd.value = urlParams.get('qtd') ?? 10;
 
     urlParams.forEach((value, key) => {
         const element = document.getElementById(key);
