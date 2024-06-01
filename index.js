@@ -4,22 +4,7 @@ const baseUrl = `http://servicodados.ibge.gov.br/api/v3/noticias`;
 const baseUrlImage = `https://agenciadenoticias.ibge.gov.br/`;
 
 function main() {
-    document.querySelector("#openModal").addEventListener("click", openModal);
-    document.querySelector("#closeModal").addEventListener("click", closeModal);
-
-    const urlParams = new URLSearchParams(location.search);
-    const qtd = document.getElementById("qtd");
-    qtd.value = urlParams.get('qtd') ?? 10;
-
-    const tipo = document.getElementById("tipo");
-    tipo.value = urlParams.get('tipo') ?? "";
-
-    const de = document.getElementById("de");
-    de.value = formatDataForValue(urlParams.get('de')) ?? "";
-
-    const ate = document.getElementById("ate");
-    ate.value = formatDataForValue(urlParams.get('ate')) ?? "";
-
+    updateValuesForms();
     showNoticias();
 }
 
@@ -176,6 +161,8 @@ function filterDataPublicacao(dataPublicacao) {
 }
 
 function appendEditorias(editorias) {
+
+    console.log(editorias);
 
     editorias = editorias.split(";")
     let finalEditoria = '';

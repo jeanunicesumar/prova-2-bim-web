@@ -16,7 +16,7 @@
                 <input type="text" id="busca" name="search" placeholder="Buscar notícia por termo" />
                 <button class="search">🔍</button>
             </form>
-            <span class="filter" id="openModal">
+            <span class="filter" onclick="openModal()">
                 <svg width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false" xmlns="http://www.w3.org/2000/svg">
                     <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
                 </svg>
@@ -36,7 +36,7 @@
 
     <dialog>
         <span>
-            <img src="./images/close.png" alt="Close modal" id="closeModal"/>
+            <img src="./images/close.png" alt="Close modal" id="closeModal" onclick="closeModal()"/>
         </span>
         <form id="form-filter" onsubmit="sendFilter(event)">
             <span>
