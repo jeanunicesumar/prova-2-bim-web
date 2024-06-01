@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", main);
 
-const baseUrl = `http://servicodados.ibge.gov.br/api/v3/noticias`;
+const baseUrl = `https://servicodados.ibge.gov.br/api/v3/noticias`;
 const baseUrlImage = `https://agenciadenoticias.ibge.gov.br/`;
 
 function main() {
@@ -161,17 +161,7 @@ function filterDataPublicacao(dataPublicacao) {
 }
 
 function appendEditorias(editorias) {
-
-    console.log(editorias);
-
-    editorias = editorias.split(";")
-    let finalEditoria = '';
-
-    editorias.forEach(editoria => {
-        finalEditoria += `#${editoria} `
-    })
-
-    return finalEditoria;
+    return `#${editorias.replace(';', ' #')}`;
 }
 
 function createPaginator(page, totalPages) {
