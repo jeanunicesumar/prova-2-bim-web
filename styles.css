@@ -184,6 +184,14 @@ dialog form button {
     grid-column-end: 3;
 }
 
+dialog form input, dialog form select:hover {
+    cursor: pointer;
+} 
+
+dialog form button:hover {
+    cursor: pointer;
+}
+
 input, select {
     min-width: 250px;
 }
@@ -208,6 +216,8 @@ header, footer, button {
 .section-paginator ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .section-paginator ul li {
@@ -225,6 +235,7 @@ header, footer, button {
 .section-paginator ul li button:hover {
     background-color: #4682b4;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .section-paginator ul li button.selected {
