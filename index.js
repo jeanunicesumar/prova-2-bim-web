@@ -142,10 +142,8 @@ function filterImage(image) {
 
 function filterDataPublicacao(dataPublicacao) {
 
-    const [day, month, year] = dataPublicacao.split(" ")[0].split('/');
-
     const date = Date.now();
-    const dataPublicacaoDate = new Date(year, month - 1, day);
+    const dataPublicacaoDate = new Date(dataPublicacao);
 
     const milliseconds = date - dataPublicacaoDate.getTime();
     const dias = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
